@@ -192,9 +192,18 @@ img {
     padding: 24px 24px 0 24px;
     letter-spacing: -0.02em;
     width: 100%;
-    max-width: 75vw;  /* Changed from 50vw to 75vw */
+    max-width: 75vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+        padding: 16px 16px 0 16px;
+        max-width: 100%;
+        margin: 0 auto 24px;
+    }
 }
 
 .sort-dropdown {
