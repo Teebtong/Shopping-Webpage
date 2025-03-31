@@ -337,8 +337,9 @@ img {
 /* Responsive adjustments for modal */
 @media screen and (max-width: 768px) {
     .modal-content {
-        margin: 10% auto;
+        margin: 20% auto 0;  /* Increased top margin to 20% */
         width: 95%;
+        padding-top: 40px;  /* Added padding to ensure space for close button */
     }
     
     .modal-details h4 {
@@ -347,5 +348,28 @@ img {
     
     .modal-details p {
         font-size: 1rem;
+    }
+}
+
+/* Add responsive styles for search bar */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .category-dropdown,
+    .sort-dropdown {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 12px;
     }
 }
