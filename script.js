@@ -8,6 +8,15 @@ const cards = document.querySelectorAll('.card');
 // Store original order of cards
 let originalCards = Array.from(cards);
 
+// Get modal elements
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modal-image');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalCategory = document.getElementById('modal-category');
+const modalPrice = document.getElementById('modal-price');
+const closeModal = document.querySelector('.close-modal');
+
 // Function to highlight text
 function highlightText(element, searchTerm) {
     if (!searchTerm) return;
@@ -97,4 +106,49 @@ sortDropdown.addEventListener('change', function(e) {
     // Clear and re-append sorted cards
     cardHolder.innerHTML = '';
     cardsArray.forEach(card => cardHolder.appendChild(card));
+});
+
+// Function to open modal
+function openModal(card) {
+    // Get card details
+    const img = card.querySelector('img');
+    const title = card.querySelector('h4').textContent;
+    const description = card.querySelector('p').textContent;
+    const category = card.querySelector('.category').textContent;
+    const price = card.querySelector('.price').textContent;
+
+    // Set modal content
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    modalCategory.textContent = category;
+    modalPrice.textContent = price;
+
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+}
+
+// Function to close modal
+function closeModalFunction() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling when modal is closed
+}
+
+// Close modal when clicking the X button
+closeModal.addEventListener('click', closeModalFunction);
+
+// Close modal when clicking outside
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeModalFunction();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+        closeModalFunction();
+    }
 });

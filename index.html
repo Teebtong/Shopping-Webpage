@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="card-holder-1">
-        <div class="card electronics">
+        <div class="card electronics" onclick="openModal(this)">
             <img src="images/coffee-maker.jpg" alt="coffee-maker">
             <div class="container">
                 <h4><b>Drip Coffee Maker</b></h4>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="card homegoods">
+        <div class="card homegoods" onclick="openModal(this)">
             <img src="images/lavender-candle.jpg" alt="lavender-candle">
             <div class="container">
                 <h4><b>Lavender Candle</b></h4>
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="card clothing">
+        <div class="card clothing" onclick="openModal(this)">
             <img src="images/men-chinos.jpg" alt="men-chinos">
             <div class="container">
                 <h4><b>Men's Chinos</b></h4>
@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div class="card homegoods">
+        <div class="card homegoods" onclick="openModal(this)">
             <img src="images/white-throw-blanket.jpg" alt="white-throw-blanket">
             <div class="container">
                 <h4><b>White Throw Blanket</b></h4>
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="card electronics">
+        <div class="card electronics" onclick="openModal(this)">
             <img src="images/monitor.jpg" alt="monitor">
             <div class="container">
                 <h4><b>Monitor</b></h4>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="card clothing">
+        <div class="card clothing" onclick="openModal(this)">
             <img src="images/men-gw-bomber.jpg" alt="men-gw-bomber">
             <div class="container">
                 <h4><b>Men's Bomber Jacket, Green/White</b></h4>
@@ -88,7 +88,7 @@
             </div>
         </div>
 
-        <div class="card clothing">
+        <div class="card clothing" onclick="openModal(this)">
             <img src="images/men-denim-shirt.jpg" alt="men-denim-shirt">
             <div class="container">
                 <h4><b>Men's Denim Shirt, Blue</b></h4>
@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <div class="card electronics">
+        <div class="card electronics" onclick="openModal(this)">
             <img src="images/humidifier.jpg" alt="humidifier">
             <div class="container">
                 <h4><b>Humidifier</b></h4>
@@ -108,7 +108,7 @@
             </div>
         </div>
 
-        <div class="card homegoods">
+        <div class="card homegoods" onclick="openModal(this)">
             <img src="images/white-throw-pillow.jpg" alt="white-throw-pillow">
             <div class="container">
                 <h4><b>White Throw Pillow</b></h4>
@@ -118,7 +118,7 @@
             </div>
         </div>
 
-        <div class="card homegoods">
+        <div class="card homegoods" onclick="openModal(this)">
             <img src="images/brass-lamp.jpg" alt="brass-lamp">
             <div class="container">
                 <h4><b>Brass Floor Lamp</b></h4>
@@ -128,6 +128,23 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="">
+            <div class="modal-details">
+                <h4 id="modal-title"></h4>
+                <p id="modal-description"></p>
+                <div class="modal-footer">
+                    <span id="modal-category"></span>
+                    <span id="modal-price"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
